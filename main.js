@@ -15,7 +15,11 @@ const showPopup = () => {
         imgShare.alt = ""
         imgShare.src = "./images/icon-share.svg"
         imgShare.classList.add("share")
-        responsiveBtn.addEventListener("click", showPopup)
+        responsiveBtn.addEventListener("click", () => {
+            showPopup
+            responsiveBtn.classList.toggle("btnShare")
+            imgShare.classList.toggle("share")
+        })
         popup.appendChild(responsiveBtn)
         responsiveBtn.appendChild(imgShare)
     }
