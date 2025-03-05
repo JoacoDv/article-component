@@ -4,6 +4,12 @@ const logo = document.querySelector(".share")
 const responsiveBtn = document.createElement("button")
 const imgShare = document.createElement("img")
 
+responsiveBtn.addEventListener("click", () => {
+    popup.classList.toggle("active")
+    responsiveBtn.classList.toggle("btnShare")
+    imgShare.classList.toggle("share")
+})
+
 const showPopup = () => {
     if(window.innerWidth >= 800) {
         popup.classList.toggle("active")
@@ -15,11 +21,7 @@ const showPopup = () => {
         imgShare.alt = ""
         imgShare.src = "./images/icon-share.svg"
         imgShare.classList.add("share")
-        responsiveBtn.addEventListener("click", () => {
-            showPopup()
-            responsiveBtn.classList.toggle("btnShare")
-            imgShare.classList.toggle("share")
-        })
+        
         popup.appendChild(responsiveBtn)
         responsiveBtn.appendChild(imgShare)
     }
